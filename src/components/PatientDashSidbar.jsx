@@ -48,17 +48,11 @@ export default function PatientDashSidbar({ onNavigation }) {
                     >
                         Update Profile
                     </li>
-                    <li
-                        className={`sidebar-item ${active === 'settings' ? 'active' : ''}`}
-                        onClick={() => handleNavigation('settings')}
-                    >
-                        Settings
-                    </li>
                 </ul>
             </div>
             {!isSidebarOpen && (
                 <button className="sidebar-open" onClick={toggleSidebar}>
-                    &#9776; 
+                    &#9776;
                 </button>
             )}
         </div>
