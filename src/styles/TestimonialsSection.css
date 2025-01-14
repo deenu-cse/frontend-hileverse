@@ -53,6 +53,11 @@ body {
     border-radius: 50%;
 }
 
+.feedback-slider-item img{
+    width: 140px;
+    height: 150px;
+}
+
 .col-md-6 {
     display: flex;
     gap: 20px;

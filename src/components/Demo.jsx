@@ -12,21 +12,21 @@ export default function Demo() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        Food Menu with Nutritional and Dietary Management
+                        Personalized Food Menu with Nutritional and Dietary Management
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.3 }}
                     >
-                        The Nutrio application provides images of the menu available, a description of the meal and also informs patients of the nutritional content. Patients select their choices on their device and the information is delivered directly to the hospital catering software. This reduces lead-times by 1-2 hours. The Nutrio service has been implemented in many hospitals and care facilities.
+                        MediMeal enables patients to easily select meals based on their dietary needs and preferences. With detailed meal descriptions and nutritional info, patients can make informed choices, while the data is sent directly to hospital catering software, reducing meal order lead times by 1-2 hours and improving operational efficiency."
                     </motion.p>
                     <motion.button
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.6 }}
                     >
-                        Request Demo
+                        Request a Demo
                     </motion.button>
                 </div>
                 <div className="rightone">

@@ -16,12 +16,10 @@ const HeroSection = () => {
             />
             <div className="banner-inner">
               <h1 className="heading-xl">
-                Experience Media Like Never Before
+                Streamlined Hospital Food Management
               </h1>
               <p className="paragraph">
-                Enjoy award-winning stereo beats with wireless listening freedom
-                and sleek, streamlined with premium padded and delivering
-                first-rate playback.
+                Simplifying the management of patient food, from meal planning to delivery, ensuring dietary needs and allergies are met with ease. Manage patient details, food charts, pantry tasks, and meal deliveries all in one place.
               </p>
               <div className="nav-item active setbtn">
                 <NavLink className="nav-linkxx" to="/food-reservation">

@@ -19,16 +19,16 @@ const ContactSection = () => {
             </div>
 
             <div className="header">
-                <h1>Let's Get Started</h1>
-                <h2>Contact us to start your next project!</h2>
+                <h1>Get in Touch with Us!</h1>
+                <h2>We're here to help...</h2>
             </div>
 
             <div className="contact-form">
                 <form className="contactform">
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <textarea rows="4" placeholder="Tell us about your project..."></textarea>
-                    <button type="button">SEND</button>
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email Address" required />
+                    <textarea rows="4" placeholder="Tell us about your dietary needs or project..." required></textarea>
+                    <button type="submit">SEND MESSAGE</button>
                 </form>
             </div>
         </div>

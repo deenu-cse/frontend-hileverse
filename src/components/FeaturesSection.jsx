@@ -15,55 +15,55 @@ const FeaturesSection = () => {
             <div className="rowflex">
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa fa-university"></i>
-                        <h2 className="features-heading">Interior Expertise</h2>
+                        <i className="fa fa-user-md"></i> {/* Icon for managing patient details */}
+                        <h2 className="features-heading">Patient Management</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Manage patient details including medical history, allergies, contact information, and more. Ensure accurate and comprehensive patient records for optimal meal planning.
                         </p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa fa-bullseye"></i>
-                        <h2 className="features-heading">Awards Winning</h2>
+                        <i className="fa fa-utensils"></i> {/* Icon for meal planning */}
+                        <h2 className="features-heading">Meal Planning</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Create personalized meal plans for patients with specific dietary needs, including morning, evening, and night meal options. Customize ingredients and meal instructions as needed.
                         </p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa fa-briefcase"></i>
-                        <h2 className="features-heading">Free Consultation</h2>
+                        <i className="fa fa-cogs"></i> {/* Icon for food preparation tasks */}
+                        <h2 className="features-heading">Food Preparation</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Assign food preparation tasks to pantry staff, monitor progress, and ensure that meals are prepared according to the specifications in patient meal charts.
                         </p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa  fa-folder-open"></i>
-                        <h2 className="features-heading">Reasonable Price</h2>
+                        <i className="fa fa-truck"></i> {/* Icon for delivery tasks */}
+                        <h2 className="features-heading">Meal Delivery</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Manage the delivery of meals to patient rooms. Track delivery personnel and ensure timely delivery of food to meet patient needs.
                         </p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa fa-undo"></i>
-                        <h2 className="features-heading">Guaranted Work</h2>
+                        <i className="fa fa-check-circle"></i> {/* Icon for task completion */}
+                        <h2 className="features-heading">Meal Delivery Confirmation</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Allow delivery personnel to confirm meal deliveries and update statuses for completed deliveries. Track delivery timestamps and any notes for reference.
                         </p>
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 col-sm-12 feature-back">
                     <div className="features-div">
-                        <i className="fa fa-envelope"></i>
-                        <h2 className="features-heading">24/7 Support</h2>
+                        <i className="fa fa-bell"></i> {/* Icon for alerts/notifications */}
+                        <h2 className="features-heading">Real-Time Alerts</h2>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+                            Receive alerts and notifications for delayed deliveries, meal preparation status, and other important updates. Stay informed about meal-related tasks and issues in real-time.
                         </p>
                     </div>
                 </div>

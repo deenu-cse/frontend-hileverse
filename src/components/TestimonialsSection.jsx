@@ -6,21 +6,21 @@ export default function TestimonialsSection() {
 
     const testimonials = [
         {
-            img: "https://i.postimg.cc/ydBjdm20/michael-dam-m-EZ3-Po-FGs-k-unsplash-1.jpg",
+            img: "https://i.pinimg.com/736x/4c/78/89/4c7889d12e4655d9a78329f7b482c139.jpg",
             name: "Cassi",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It is a long established fact that a reader will be distracted by the readable its layout.",
-            rating: 4,
-        },
-        {
-            img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/451270/profile/profile-80.jpg",
-            name: "Md Nahidul",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It is a long established fact that a reader will be distracted by the readable its layout.",
+            text: "I've never felt more cared for in a meal service. The personalized diet plan has been perfect for my allergies and dietary needs. It makes life so much easier!",
             rating: 5,
         },
         {
-            img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/451270/profile/profile-80.jpg",
+            img: "https://i.pinimg.com/736x/31/37/5c/31375c33e0beee1a27121ef94f501a34.jpg",
             name: "Md Nahidul",
-            text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It is a long established fact that a reader will be distracted by the readable its layout.",
+            text: "As someone with multiple health conditions, finding a service that customizes meals to my needs has been life-changing. The dashboard makes it so easy to track everything.",
+            rating: 5,
+        },
+        {
+            img: "https://i.pinimg.com/736x/48/b9/96/48b996eb793ed8f516fac6e8f7b4b9d2.jpg",
+            name: "Sarah",
+            text: "The personalized meal plans have been amazing! I feel better, healthier, and more energetic, thanks to the dietary options based on my health conditions.",
             rating: 5,
         },
     ];
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
                     <div className="row">
                         <div className="col-sm-offset-2 col-sm-8">
                             <div>
-                                <h2 className="section-title">What Clients Say</h2>
+                                <h2 className="section-title">What Our Clients Are Saying</h2>
                             </div>
                         </div>
                     </div>
