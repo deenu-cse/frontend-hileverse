@@ -1,0 +1,86 @@
+.food-chart-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: auto;
+}
+
+.dashflex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.sideflex {
+    width: 20%;
+}
+
+.mainconflex {
+    width: 80%;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.patient-input {
+    padding: 10px;
+    width: 70%;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.generate-btn {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: #16a085;
+}
+
+.food-chart-details {
+    margin-top: 20px;
+}
+
+.meal-section {
+    width: 90%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.meal-section:hover {
+    transform: scale(1.03);
+}
+
+.meal-section h3 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.meal-section p {
+    color: #7f8c8d;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.meal-section strong {
+    color: #2c3e50;
+}

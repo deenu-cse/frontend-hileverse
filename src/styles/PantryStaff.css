@@ -1,0 +1,142 @@
+/* PantryStaff.css */
+.pantry-staff-container {
+    background-color: #f4f6f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .pantry-staff-container input,
+  .pantry-staff-container button {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .pantry-staff-container input {
+    width: 100%;
+  }
+  
+  .pantry-staff-container button {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pantry-staff-container button:hover {
+    background-color: #2980b9;
+  }
+  
+  .staff-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .staff-item {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .staff-item button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* StaffList.css */
+
+.staff-list-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .staff-list-header {
+    font-size: 24px;
+    color: #2d3436;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .staff-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .staff-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .staff-item:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+  }
+  
+  .staff-details {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 60px;
+  }
+  
+  .staff-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2d3436;
+  }
+  
+  .staff-contact,
+  .staff-location {
+    font-size: 14px;
+    color: #11191b;
+  }
+  
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  
+  .staff-item button:hover {
+    background-color: darkred;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  

@@ -1,0 +1,19 @@
+.about {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .about h2 {
+    color: #008cba;
+    margin-bottom: 20px;
+  }
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .about-img {
+    width: 100%;
+    height: 200px;
+    background: url("/path-to-your-image.jpg") no-repeat center center/cover;
+  }
+  

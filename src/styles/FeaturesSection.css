@@ -1,0 +1,156 @@
+@import 'font-awesome/css/font-awesome.min.css';
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.heading {
+    margin-top: 0px;
+}
+
+.separator {
+    position: relative;
+    display: inline-block;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.separator:after,
+.separator:before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #353535;
+    top: 50%;
+}
+
+.containerf {
+    width: 96%;
+}
+
+.separator i {
+    color: #353535;
+}
+
+.separator:after {
+    right: 140%;
+}
+
+.separator:before {
+    left: 140%;
+}
+
+.heading-main-white {
+    color: #fff;
+}
+
+.heading-main-white .separator {
+    color: #fff;
+    margin-left: 78px;
+}
+
+.heading-main-white .separator:before,
+.heading-main-white .separator:after {
+    background: #d45725;
+}
+
+.heading-main-white .separator i {
+    color: #d45725;
+}
+
+.feature-section {
+    background: linear-gradient(to bottom, #7bdcb5, #8ed1fc);
+    padding: 60px 0;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rowuper {
+    display: flex;
+    justify-content: center;
+}
+
+.feature-back:hover {
+    color: #fff !important;
+    background-color: #ffffff1c;
+    border-radius: 11px;
+}
+
+.feature-back {
+    color: #fff !important;
+    padding: 18px;
+    margin-bottom: 20px; 
+    width: 30%;
+}
+
+.rowflex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures equal gaps */
+}
+
+.features-title {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: #fff;
+}
+
+.below-line-feature {
+    border-top: 2px solid #fff;
+    display: inline-block;
+    bottom: auto;
+    left: auto;
+    margin: auto auto auto 0;
+    font-size: 16px;
+    color: #fff;
+    padding-left: 50px;
+    padding-top: 4px;
+}
+
+.features-div i {
+    color: #d45725;
+    font-size: 48px !important;
+    float: left;
+    padding-right: 18px;
+    padding-top: 15px;
+}
+
+.features-heading {
+    font-size: 19.98px;
+    letter-spacing: 0.5px;
+}
+
+.features-div p {
+    font-size: 14px;
+    color: #fff;
+    padding-left: 70px;
+    line-height: 2;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .feature-back {
+        width: 48%; /* Adjusts width for medium screens (2 per row) */
+    }
+}
+
+@media (max-width: 700px) {
+    .feature-back {
+        width: 100%; /* Stacks cards in one column for small screens */
+    }
+}

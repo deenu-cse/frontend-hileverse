@@ -1,0 +1,32 @@
+/* Default button styles */
+.markas {
+    padding: 10px 9px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for the button when the task is not delivered */
+.markas.not-delivered {
+    background-color: orange; /* Blue */
+}
+.markas.failed {
+    background-color: rgb(249, 53, 53); 
+    padding: 10px 17px;
+    cursor: not-allowed;
+}
+
+.markas.not-delivered:hover {
+    background-color: rgb(197, 130, 5);
+}
+
+/* Style for the button when the task is delivered */
+.markas.delivered {
+    background-color: #27bc4a; /* Green */
+    color: white;
+    pointer-events: none; 
+    opacity: 0.9;
+    cursor: not-allowed;
+}

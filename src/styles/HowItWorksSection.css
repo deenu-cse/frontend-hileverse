@@ -1,0 +1,83 @@
+.how-it-works-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 20px;
+    position: relative;
+    background: linear-gradient(to bottom, #7bdcb5, #0693e3, #8ed1fc);
+  }
+  
+  .timeline-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    max-width: 800px;
+    position: relative;
+  }
+  
+  .timeline-row:nth-child(even) .timeline-content {
+    order: 1;
+  }
+  
+  .progressbar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative;
+  }
+  
+  .dot-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+  
+  .progress-bar {
+    width: 4px;
+    height: 110px;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+  }
+  
+  .fill {
+    width: 100%;
+    height: 0;
+    background: rgba(255, 82, 14, 1);
+    position: absolute;
+    bottom: 0;
+    transition: height 0.8s ease-in-out;
+  }
+  
+  .timeline-content {
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .step-title {
+    color: rgba(255, 82, 14, 1);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: white;
+  }
+  
+  p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  

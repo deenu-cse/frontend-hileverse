@@ -1,0 +1,144 @@
+/* Basic slider styles */
+.container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    min-height: 358px;
+}
+
+.testimonialcontainer {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to bottom, #afe2fa, #848383);
+}
+
+
+.slides {
+    display: flex;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 70%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    display: block;
+    width: 19%;
+    border: 4px solid white;
+    position: absolute;
+    bottom: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s linear;
+}
+
+label.second {
+    left: 20%;
+}
+
+label.third {
+    left: 40%;
+}
+
+.img1 {
+    width: 160px;
+    height: 160px;
+}
+
+.img2 {
+    width: 160px;
+    height: 160px;
+}
+
+.img3 {
+    width: 160px;
+    height: 160px;
+}
+
+.seconflex {
+    display: flex;
+    align-items: center;
+}
+
+.secondname {
+    display: flex;
+    flex-direction: column;
+}
+
+.blockquote {
+    margin: 0;
+    padding: 30px;
+    width: 500px;
+    background-color: #DB532B;
+    color: white;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: background-color 0.6s linear;
+}
+
+.quotes {
+    font-size: 30px;
+    color: #888;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.customer-photo {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.customer-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-btn {
+    background-color: #ccc;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.nav-btn.first {
+    background-color: #ff6f61;
+}
+
+.nav-btn.second {
+    background-color: #4caf50;
+}
+
+.nav-btn.third {
+    background-color: #2196f3;
+}
+
+/* Add a simple transition effect */
+input[type="radio"]:checked+.nav-btn {
+    background-color: #333;
+}

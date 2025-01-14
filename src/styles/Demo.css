@@ -1,0 +1,22 @@
+.twosection{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+}
+
+.leftone button{
+   padding: 12px 20px;
+   border-radius: 15px;
+   font-size: 15px;
+   font-weight: 500;
+   margin: 10px;
+   outline: none;
+   cursor: pointer;
+   background-color: #12de8d;
+   border: none;
+}
+
+.rightone img{
+    width: 600px;
+    height: 400px;
+}

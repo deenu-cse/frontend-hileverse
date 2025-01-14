@@ -1,0 +1,140 @@
+/* Container and Panel Styles */
+.containerform {
+    margin-top: 50px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .panel {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+  }
+
+  .col-md-6{
+    display: flex;
+    gap: 20px;
+  }
+
+  .selected-item {
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: red;
+    margin-left: 5px;
+}
+
+  
+  .panel-primary {
+    border: 2px solid #007bff;
+    background-color: #f1f8ff;
+  }
+  
+  .panel-heading {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .panel-body {
+    padding: 20px;
+  }
+  
+  /* Form Layout */
+  .form-horizontal .form-group {
+    margin-bottom: 15px;
+  }
+  
+ .control-label{
+    color: gray;
+ }
+  
+  .col-md-2, .col-md-3, .col-md-8 {
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .col-md-offset-2 {
+    margin-left: 16.66667%;
+  }
+  
+  /* Input Fields */
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  textarea.form-control {
+    height: 100px;
+    width: 70%;
+    resize: vertical;
+  }
+  
+  /* Buttons */
+  .btn-lg {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-primary:hover, .btn-danger:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  button[type="button"] {
+    width: auto;
+    float: right;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .col-md-2, .col-md-3, .col-md-8 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .col-md-offset-2 {
+      margin-left: 0;
+    }
+  
+    .panel-heading {
+      font-size: 1.2rem;
+    }
+  
+    .btn-lg {
+      font-size: 1rem;
+    }
+  }
+  

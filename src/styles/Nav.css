@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(to right, #007acc, #72c2ff);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .book-food-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: white;
+    color: #007acc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .book-food-btn:hover {
+    background-color: #e6f7ff;
+    transform: scale(1.05);
+  }
+  
