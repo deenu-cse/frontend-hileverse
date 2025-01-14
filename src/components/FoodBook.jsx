@@ -67,7 +67,7 @@ const ReservationForm = () => {
 
         try {
             console.log("code here....")
-            const response = await fetch('http://localhost:3000/reservations', {
+            const response = await fetch('https://hilverse-backend.vercel.app/reservations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
