@@ -23,7 +23,7 @@ const DeliveryDashboard = () => {
         setError("");
 
         try {
-            const response = await axios.post("https://hilverse-backend.vercel.app/deliverylogin", { email });
+            const response = await axios.post("http://localhost:3000/deliverylogin", { email });
             const { token, assignedTasks } = response.data;
 
             if (token) {
@@ -42,7 +42,7 @@ const DeliveryDashboard = () => {
 
     const fetchTasks = async (token) => {
         try {
-            const response = await axios.get("https://hilverse-backend.vercel.app/deliverylogin", {
+            const response = await axios.get("http://localhost:3000/deliverylogin", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -59,7 +59,7 @@ const DeliveryDashboard = () => {
         try {
             const token = localStorage.getItem("token");
             await axios.put(
-                `https://hilverse-backend.vercel.app/tasks/${id}`,
+                `http://localhost:3000/tasks/${id}`,
                 { deliveryStatus: status },
                 {
                     headers: {
@@ -87,7 +87,7 @@ const DeliveryDashboard = () => {
                             <h4>Email:</h4>
                             <input
                                 type="email"
-                                placeholder="Enter your delivery email"
+                                placeholder="Enter your email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
@@ -101,7 +101,7 @@ const DeliveryDashboard = () => {
                 </div>
             ) : (
                 <div className="task-tracker-container dashname">
-                    <h1>Assigned Tasks</h1>
+                    <h1>Delivery Boy Assigned Tasks</h1>
                     {tasks.length === 0 ? (
                         <p>No tasks assigned to you.</p>
                     ) : (

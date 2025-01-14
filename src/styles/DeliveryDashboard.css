@@ -12,6 +12,11 @@
 .markas.not-delivered {
     background-color: orange; /* Blue */
 }
+
+.error{
+    color: rgb(242, 39, 39);
+}
+
 .markas.failed {
     background-color: rgb(249, 53, 53); 
     padding: 10px 17px;
