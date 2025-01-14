@@ -77,7 +77,7 @@ export default function HospitalSystem() {
   }
 
   return (
-    <div className="hospital-container">
+    <div className="dashflex">
       <button
         onClick={handleLogout}
         className="btn btn-danger"
@@ -85,14 +85,13 @@ export default function HospitalSystem() {
       >
         Logout
       </button>
+      <div className="sideflex"></div>
       <HosSidebar onNavigation={handleNavigation} />
-      <div className="food-chart-containerx">
-        <div className="section">
-          {activeSection === "add-staff" && <PantryStaff />}
-          {activeSection === "assign-task" && <TaskAssignment />}
-          {activeSection === "food-status" && <TaskTracker />}
-          {activeSection === "user-table" && <UserTable />}
-        </div>
+      <div className="mainconflex">
+        {activeSection === "add-staff" && <PantryStaff />}
+        {activeSection === "assign-task" && <TaskAssignment />}
+        {activeSection === "food-status" && <TaskTracker />}
+        {activeSection === "user-table" && <UserTable />}
       </div>
     </div>
   );

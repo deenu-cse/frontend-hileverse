@@ -111,3 +111,10 @@ body {
   background-color: #ff5252;
   transform: scale(1.05);
 }
+
+@media screen and (max-width:405px) {
+  .nav-link{
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+}

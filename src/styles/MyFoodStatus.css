@@ -1,94 +1,107 @@
-  
+.food-status-container {
+  width: 85%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.food-status-container h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.food-status-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.food-status-table thead {
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.food-status-table th,
+.food-status-table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.food-status-table th {
+  font-weight: bold;
+}
+
+.food-status-table td.status {
+  font-weight: bold;
+  text-align: center;
+  border-left: 2px solid #e0e0e0;
+}
+
+.food-status-table td.status.pending {
+  color: #ff9800;
+}
+
+.food-status-table td.status.completed {
+  color: #4caf50;
+}
+
+.food-status-table td.status.na {
+  color: #f44336;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .food-status-container {
-    width: 85%;
-    margin: 50px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+      width: 100%;
+      padding: 10px;
   }
-  
-  .food-status-container h2 {
-    font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .food-status-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
+
+  /* Hide table header for small screens */
   .food-status-table thead {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-
-  
-  .food-status-table th,
-  .food-status-table td {
-    padding: 15px;
-    text-align: left;
-    font-size: 1rem;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .food-status-table th {
-    font-weight: bold;
-  }
-
-  
-  .food-status-table td.status {
-    font-weight: bold;
-    text-align: center;
-    border-left: 2px solid #e0e0e0;
-  }
-  
-  .food-status-table td.status.pending {
-    color: #ff9800;
-  }
-  
-  .food-status-table td.status.completed {
-    color: #4caf50;
-  }
-  
-  .food-status-table td.status.na {
-    color: #f44336;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .food-status-table thead {
       display: none;
-    }
-  
-    .food-status-table tr {
+  }
+
+  /* Style rows as blocks */
+  .food-status-table tr {
       display: block;
       margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 10px;
-    }
-  
-    .food-status-table td {
+      background-color: #f9f9f9;
+  }
+
+  .food-status-table td {
       display: block;
       padding: 10px;
       text-align: right;
       font-size: 0.9rem;
       border-bottom: none;
-    }
-  
-    .food-status-table td:before {
+  }
+
+  .food-status-table td:before {
       content: attr(data-label);
       font-weight: bold;
       float: left;
       text-transform: capitalize;
-    }
-  
-    .food-status-table td:last-child {
-      border-bottom: none;
-    }
   }
-  
+
+  .food-status-table td:last-child {
+      border-bottom: none;
+  }
+
+  /* Adjust font sizes and padding for small screens */
+  .food-status-table td {
+      font-size: 0.9rem;
+  }
+
+  .food-status-container h2 {
+      font-size: 1.5rem;
+  }
+}

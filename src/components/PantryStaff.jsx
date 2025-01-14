@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import '../styles/PantryStaff.css'
+import '../styles/PantryStaff.css';
 
 const PantryStaff = () => {
     const [staff, setStaff] = useState([]);
@@ -27,34 +27,36 @@ const PantryStaff = () => {
     };
 
     return (
-        <div>
+        <div className="pantry-staff-wrapper">
             <div className="pantry-staff-container">
-                <h1 className="staff-list-header" >Manage Pantry Staff</h1>
-                <input
-                    type="text"
-                    placeholder="Name"
-                    value={newStaff.name}
-                    onChange={(e) => setNewStaff({ ...newStaff, name: e.target.value })}
-                />
-                <input
-                    type="text"
-                    placeholder="Contact Info"
-                    value={newStaff.contactInfo}
-                    onChange={(e) => setNewStaff({ ...newStaff, contactInfo: e.target.value })}
-                />
-                <input
-                    type="text"
-                    placeholder="Email"
-                    value={newStaff.email}
-                    onChange={(e) => setNewStaff({ ...newStaff, email: e.target.value })}
-                />
-                <input
-                    type="text"
-                    placeholder="Location"
-                    value={newStaff.location}
-                    onChange={(e) => setNewStaff({ ...newStaff, location: e.target.value })}
-                />
-                <button onClick={addStaff}>Add Staff</button>
+                <h1 className="staff-list-header">Manage Pantry Staff</h1>
+                <div className="form-container">
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        value={newStaff.name}
+                        onChange={(e) => setNewStaff({ ...newStaff, name: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Contact Info"
+                        value={newStaff.contactInfo}
+                        onChange={(e) => setNewStaff({ ...newStaff, contactInfo: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Email"
+                        value={newStaff.email}
+                        onChange={(e) => setNewStaff({ ...newStaff, email: e.target.value })}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Location"
+                        value={newStaff.location}
+                        onChange={(e) => setNewStaff({ ...newStaff, location: e.target.value })}
+                    />
+                    <button onClick={addStaff}>Add Staff</button>
+                </div>
             </div>
 
             <div className="staff-list-container">

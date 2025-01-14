@@ -3,8 +3,18 @@
     display: flex;
 }
 
-.food-chart-containerx {
-    margin-left: 310px;
+.staff-list-header{
+  color: #34495e;
+}
+
+.staff-details{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.food-chart-container {
+    margin-left: 6px;
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;

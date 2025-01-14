@@ -41,7 +41,7 @@ const FoodChartForm = () => {
 
     return (
         <div className="food-chart-container">
-            {foodChart && (
+            {foodChart ? (
                 <animated.div style={mealAnimation} className="food-chart-details">
                     <div className="meal-section">
                         <h3>Morning Meal</h3>
@@ -64,6 +64,7 @@ const FoodChartForm = () => {
                         <p><strong>Calories:</strong> {foodChart.nightMeal.calories} kcal</p>
                     </div>
                 </animated.div>
+            ) : (<div className="loading-spinner">Loading...</div>
             )}
         </div>
     );

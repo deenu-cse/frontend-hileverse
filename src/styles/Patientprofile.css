@@ -1,10 +1,11 @@
-
+/* Base styling for the profile container and card */
 .profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    background-color: #f4f7f9;
 }
 
 .profile-card {
@@ -17,6 +18,7 @@
     text-align: center;
     color: #333;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
 }
 
 .profile-card:hover {
@@ -55,10 +57,19 @@
     margin-bottom: 0;
 }
 
+/* Loading spinner (for when data is being fetched) */
+.loading-spinner {
+    font-size: 1.5rem;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .profile-card {
         padding: 20px;
         margin: 10px;
+        width: 100%;
     }
 
     .profile-card h2 {
@@ -67,5 +78,29 @@
 
     .profile-card p {
         font-size: 0.9rem;
+    }
+
+    .profile-card p strong {
+        font-weight: 700;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 15px;
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .profile-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .profile-card p {
+        font-size: 0.85rem;
     }
 }

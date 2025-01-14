@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../styles/Patientprofile.css'
+import '../styles/Patientprofile.css';
 
 export default function Patientprofile() {
     const [Patient, setPatient] = useState(null);
     const [loading, setLoading] = useState(false);
-
-
 
     useEffect(() => {
         // Get patientId from localStorage when the component mounts
@@ -16,12 +14,11 @@ export default function Patientprofile() {
         }
     }, []);
 
-
     const handleGenerateFoodChart = async (id) => {
         setLoading(true);
         try {
             const response = await axios.post(`https://hilverse-backend.vercel.app/getpatient/${id}`);
-            console.log(response)
+            console.log(response);
             setPatient(response.data.patient);
         } catch (error) {
             console.error('Error generating food chart:', error);
@@ -30,12 +27,12 @@ export default function Patientprofile() {
         }
     };
 
-    console.log(Patient)
+    console.log(Patient);
 
     return (
         <>
             <div className="profile-container">
-                {Patient && (
+                {Patient ? (
                     <div className="profile-card">
                         <h2>Personal Information</h2>
                         <p><strong>Name:</strong> {Patient.name}</p>
@@ -47,8 +44,10 @@ export default function Patientprofile() {
                         <p><strong>Allergies:</strong> {Patient.allergies}</p>
                         <p><strong>Room:</strong> {Patient.roomNumber}, <strong>Bed:</strong> {Patient.bedNumber}, <strong>Floor:</strong> {Patient.floorNumber}</p>
                     </div>
+                ) : (
+                    <div className="loading-spinner">Loading...</div>
                 )}
             </div>
         </>
-    )
+    );
 }

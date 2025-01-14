@@ -74,7 +74,7 @@ export default function MyFoodStatus() {
                     </tr>
                 </thead>
                 <tbody>
-                    {mergedData.map((item, index) => (
+                    {mergedData? mergedData.map((item, index) => (
                         <tr key={index}>
                             <td>{item.mealTime}</td>
                             <td>{item.food}</td>
@@ -87,7 +87,7 @@ export default function MyFoodStatus() {
                                 {item.deliveryStatus}
                             </td>
                         </tr>
-                    ))}
+                    )): <div className="loading-spinner">No Shedule for today..</div>}
                 </tbody>
             </table>
         </div>

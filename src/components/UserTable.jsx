@@ -14,7 +14,7 @@ const PatientTable = () => {
                     name: patient.name,
                     email: patient.contactInfo,
                     Contact: patient.emergencyContact,
-                    patientId: patient.patientId,
+                    patientId: patient.patientId.userId,
                     roomNumber: patient.roomNumber,
                 }));
                 setPatients(formattedPatients);
