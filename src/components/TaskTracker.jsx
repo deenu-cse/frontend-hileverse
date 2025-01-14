@@ -15,7 +15,7 @@ const TaskTracker = () => {
     // Function to fetch tasks from the server
     const fetchTasks = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/get-tasks");
+            const response = await axios.get("https://hilverse-backend.vercel.app/get-tasks");
             setTasks(response.data);
         } catch (error) {
             console.error("Error fetching tasks:", error);
@@ -26,7 +26,7 @@ const TaskTracker = () => {
     const fetchDietChart = async (id) => {
         console.log(id);
         try {
-            const response = await axios.post(`http://localhost:3000/food-chart/${id}`);
+            const response = await axios.post(`https://hilverse-backend.vercel.app/food-chart/${id}`);
             console.log(response);
 
             // Transform the response data into an array for mapping
@@ -52,7 +52,7 @@ const TaskTracker = () => {
     // Function to update a specific field in a task
     const updateTask = async (id, field, value) => {
         try {
-            await axios.put(`http://localhost:3000/tasks/${id}`, { [field]: value });
+            await axios.put(`https://hilverse-backend.vercel.app/tasks/${id}`, { [field]: value });
             fetchTasks();
         } catch (err) {
             console.error("Error updating task:", err);

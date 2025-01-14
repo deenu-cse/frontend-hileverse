@@ -18,7 +18,7 @@ export default function MyFoodStatus() {
 
     const fetchFoodStatus = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/get-tasks");
+            const response = await axios.get("https://hilverse-backend.vercel.app/get-tasks");
             setFoodStatusData(response.data); // Store the food status data
         } catch (error) {
             console.error('Error fetching food status:', error);
@@ -27,7 +27,7 @@ export default function MyFoodStatus() {
 
     const fetchDietChart = async (id) => {
         try {
-            const response = await axios.post(`http://localhost:3000/food-chart/${id}`);
+            const response = await axios.post(`https://hilverse-backend.vercel.app/food-chart/${id}`);
             const dietChartArray = [
                 { mealTime: 'Morning Meal', ...response.data.data.morningMeal },
                 { mealTime: 'Evening Meal', ...response.data.data.eveningMeal },

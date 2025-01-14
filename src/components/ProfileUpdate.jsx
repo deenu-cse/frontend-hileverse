@@ -21,7 +21,7 @@ export default function ProfileUpdate() {
             if (id) {
                 try {
                     const response = await axios.post(
-                        `http://localhost:3000/getpatient/${id}`
+                        `https://hilverse-backend.vercel.app/getpatient/${id}`
                     );
                     console.log(response);
                     setPatientData(response.data.patient); 
@@ -53,7 +53,7 @@ export default function ProfileUpdate() {
     const handleSave = async () => {
         try {
             const response = await axios.put(
-                `http://localhost:3000/patientUpd/${patientData.patientId}`,
+                `https://hilverse-backend.vercel.app/patientUpd/${patientData.patientId}`,
                 patientData
             );
             alert("Profile updated successfully!");

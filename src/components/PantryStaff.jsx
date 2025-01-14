@@ -11,18 +11,18 @@ const PantryStaff = () => {
     }, []);
 
     const fetchStaff = async () => {
-        const response = await axios.get("http://localhost:3000/pantry-staff");
+        const response = await axios.get("https://hilverse-backend.vercel.app/pantry-staff");
         setStaff(response.data);
     };
 
     const addStaff = async () => {
-        await axios.post("http://localhost:3000/pantry-staffadd", newStaff);
+        await axios.post("https://hilverse-backend.vercel.app/pantry-staffadd", newStaff);
         setNewStaff({ name: "", contactInfo: "", location: "", email: "" });
         fetchStaff();
     };
 
     const deleteStaff = async (id) => {
-        await axios.delete(`http://localhost:3000/pantry-staffid/${id}`);
+        await axios.delete(`https://hilverse-backend.vercel.app/pantry-staffid/${id}`);
         fetchStaff();
     };
 

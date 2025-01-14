@@ -20,7 +20,7 @@ const FoodChartForm = () => {
     const handleGenerateFoodChart = async (id) => {
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:3000/food-chart/${id}`);
+            const response = await axios.post(`https://hilverse-backend.vercel.app/food-chart/${id}`);
             console.log(response)
             setFoodChart(response.data.data);
         } catch (error) {

@@ -11,12 +11,12 @@ const TaskAssignment = () => {
     }, []);
 
     const fetchStaff = async () => {
-        const response = await axios.get("http://localhost:3000/pantry-staff");
+        const response = await axios.get("https://hilverse-backend.vercel.app/pantry-staff");
         setStaff(response.data);
     };
 
     const assignTask = async () => {
-        await axios.post("http://localhost:3000/meal-tasks", task);
+        await axios.post("https://hilverse-backend.vercel.app/meal-tasks", task);
         setTask({ staffId: "", patientName: "", mealType: "", roomName: "", bedNumber: "", patientId: "" });
     };
 

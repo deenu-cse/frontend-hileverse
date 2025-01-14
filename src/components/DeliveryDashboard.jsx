@@ -23,7 +23,7 @@ const DeliveryDashboard = () => {
         setError("");
 
         try {
-            const response = await axios.post("http://localhost:3000/deliverylogin", { email });
+            const response = await axios.post("https://hilverse-backend.vercel.app/deliverylogin", { email });
             const { token, assignedTasks } = response.data;
 
             if (token) {
@@ -42,7 +42,7 @@ const DeliveryDashboard = () => {
 
     const fetchTasks = async (token) => {
         try {
-            const response = await axios.get("http://localhost:3000/deliverylogin", {
+            const response = await axios.get("https://hilverse-backend.vercel.app/deliverylogin", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -59,7 +59,7 @@ const DeliveryDashboard = () => {
         try {
             const token = localStorage.getItem("token");
             await axios.put(
-                `http://localhost:3000/tasks/${id}`,
+                `https://hilverse-backend.vercel.app/tasks/${id}`,
                 { deliveryStatus: status },
                 {
                     headers: {

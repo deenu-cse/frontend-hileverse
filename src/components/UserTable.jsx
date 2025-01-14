@@ -8,7 +8,7 @@ const PatientTable = () => {
     useEffect(() => {
         const fetchPatients = async () => {
             try {
-                const response = await fetch("http://localhost:3000/getpatients"); 
+                const response = await fetch("https://hilverse-backend.vercel.app/getpatients"); 
                 const data = await response.json();
                 const formattedPatients = data.map((patient) => ({
                     name: patient.name,

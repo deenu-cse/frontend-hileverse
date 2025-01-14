@@ -20,7 +20,7 @@ export default function Patientprofile() {
     const handleGenerateFoodChart = async (id) => {
         setLoading(true);
         try {
-            const response = await axios.post(`http://localhost:3000/getpatient/${id}`);
+            const response = await axios.post(`https://hilverse-backend.vercel.app/getpatient/${id}`);
             console.log(response)
             setPatient(response.data.patient);
         } catch (error) {
