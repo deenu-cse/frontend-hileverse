@@ -53,7 +53,7 @@ export default function ProfileUpdate() {
     const handleSave = async () => {
         try {
             const response = await axios.put(
-                `https://hilverse-backend.vercel.app/patientUpd/${patientData.patientId}`,
+                `https://hilverse-backend.vercel.app/patientUpd/${patientData.patientId.userId}`,
                 patientData
             );
             alert("Profile updated successfully!");

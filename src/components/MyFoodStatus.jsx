@@ -12,14 +12,15 @@ export default function MyFoodStatus() {
     useEffect(() => {
         if (patientId) {
             fetchDietChart(patientId);
+            fetchFoodStatus(patientId);
         }
-        fetchFoodStatus();
     }, [patientId]);
 
-    const fetchFoodStatus = async () => {
+    const fetchFoodStatus = async (id) => {
         try {
-            const response = await axios.get("https://hilverse-backend.vercel.app/get-tasks");
-            setFoodStatusData(response.data); // Store the food status data
+            const response = await axios.get(`https://hilverse-backend.vercel.app/get-tasks/${id}`);
+            console.log("Food Status Data:", response.data);
+            setFoodStatusData(Array.isArray(response.data) ? response.data : [response.data]); // Ensure data is an array
         } catch (error) {
             console.error('Error fetching food status:', error);
         }
@@ -33,14 +34,13 @@ export default function MyFoodStatus() {
                 { mealTime: 'Evening Meal', ...response.data.data.eveningMeal },
                 { mealTime: 'Night Meal', ...response.data.data.nightMeal },
             ];
-            setDietChartData(dietChartArray); // Store the diet chart data
+            setDietChartData(dietChartArray); 
         } catch (error) {
             console.error('Error fetching diet chart:', error);
         }
     };
 
     useEffect(() => {
-        // Merge the two datasets into one for the table
         if (foodStatusData.length && dietChartData.length) {
             const combinedData = dietChartData.map((diet) => {
                 const statusData = foodStatusData.find(
@@ -48,7 +48,7 @@ export default function MyFoodStatus() {
                 );
                 return {
                     mealTime: diet.mealTime,
-                    food: diet.ingredients.join(', '),
+                    food: diet.ingredients ? diet.ingredients.join(', ') : 'N/A',
                     preparationStatus: statusData?.preparationStatus || 'N/A',
                     deliveryStatus: statusData?.deliveryStatus || 'N/A',
                     roomName: statusData?.roomName || 'N/A',
@@ -74,7 +74,7 @@ export default function MyFoodStatus() {
                     </tr>
                 </thead>
                 <tbody>
-                    {mergedData? mergedData.map((item, index) => (
+                    {mergedData.length > 0 ? mergedData.map((item, index) => (
                         <tr key={index}>
                             <td>{item.mealTime}</td>
                             <td>{item.food}</td>
@@ -87,7 +87,13 @@ export default function MyFoodStatus() {
                                 {item.deliveryStatus}
                             </td>
                         </tr>
-                    )): <div className="loading-spinner">No Shedule for today..</div>}
+                    )) : (
+                        <tr>
+                            <td colSpan="6" className="no-data">
+                                No Schedule for today.
+                            </td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
         </div>
