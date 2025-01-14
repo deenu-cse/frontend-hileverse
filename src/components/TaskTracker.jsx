@@ -127,7 +127,7 @@ const TaskTracker = () => {
                         ) : (
                             <p>Loading diet chart...</p>
                         )}
-                        <button className="close-btn" onClick={closeDietChart}>
+                        <button className="close-btn2" onClick={closeDietChart}>
                             Close
                         </button>
                     </div>
