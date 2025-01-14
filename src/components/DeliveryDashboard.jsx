@@ -87,7 +87,7 @@ const DeliveryDashboard = () => {
                             <h4>Email:</h4>
                             <input
                                 type="email"
-                                placeholder="Enter your email"
+                                placeholder="Enter your delivery email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
