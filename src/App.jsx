@@ -4,6 +4,8 @@ import ReservationForm from './components/FoodBook'
 import PatientDashboard from './components/PatientDashboard'
 import HospitalSystem from './components/HospitalSystem'
 import DeliveryDashboard from './components/DeliveryDashboard'
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 function App() {
 

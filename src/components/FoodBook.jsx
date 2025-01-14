@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/FoodBook.css';
 
 const ReservationForm = () => {
@@ -14,6 +14,14 @@ const ReservationForm = () => {
         bedNumber: "",
         floorNumber: ""
     });
+    const [hasBooked, setHasBooked] = useState(false);
+
+    useEffect(() => {
+        const patientId = localStorage.getItem('patientId');
+        if (patientId) {
+            setHasBooked(true);
+        }
+    }, []);
 
     const handleDiseaseChange = (event) => {
         const disease = event.target.value;
@@ -59,7 +67,7 @@ const ReservationForm = () => {
 
         try {
             console.log("code here....")
-            const response = await fetch('https://hilverse-backend.vercel.app/reservations', {
+            const response = await fetch('http://localhost:3000/reservations', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,6 +77,9 @@ const ReservationForm = () => {
 
             if (response.ok) {
                 const result = await response.json();
+                console.log(result)
+                localStorage.setItem('patientId', result.data.patientId.userId);
+
                 alert('Reservation submitted successfully!');
                 setFormData({
                     name: "",
@@ -79,7 +90,8 @@ const ReservationForm = () => {
                     roomNumber: "",
                     bedNumber: "",
                     floorNumber: ""
-                })
+                });
+                setHasBooked(true);
             } else {
                 alert('Failed to submit the reservation.');
             }
@@ -95,215 +107,221 @@ const ReservationForm = () => {
 
     return (
         <div className="containerform">
-            <div className="panel panel-primary dialog-panel">
-                <div className="panel-heading">
-                    <h5>Hospital Meal - Reservation</h5>
+            {hasBooked ? (
+                <div className="already-booked">
+                    <h2>You have already booked your food! <br></br>✮⋆˙ Thanks for joining us ✮⋆˙</h2>
                 </div>
-                <div className="panel-body">
-                    <form className="form-horizontal" role="form" onSubmit={handleSubmit}>
-                        {/* Name */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="name">
-                                Name
-                            </h4>
-                            <div className="col-md-8">
-                                <input
-                                    className="form-control"
-                                    id="name"
-                                    type="text"
-                                    placeholder="Full Name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                />
+            ) : (
+                <div className="panel panel-primary dialog-panel">
+                    <div className="panel-heading">
+                        <h5>Hospital Meal - Reservation</h5>
+                    </div>
+                    <div className="panel-body">
+                        <form className="form-horizontal" role="form" onSubmit={handleSubmit}>
+                            {/* Name */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="name">
+                                    Name
+                                </h4>
+                                <div className="col-md-8">
+                                    <input
+                                        className="form-control"
+                                        id="name"
+                                        type="text"
+                                        placeholder="Full Name"
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Diseases */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="diseases">
-                                Diseases
-                            </h4>
-                            <div className="col-md-8">
-                                <select className="form-control" onChange={handleDiseaseChange}>
-                                    <option value="">Select Disease</option>
-                                    <option>Cancer</option>
-                                    <option>Diabetes</option>
-                                    <option>Hypertension</option>
-                                    <option>Asthma</option>
-                                    <option>Malaria</option>
-                                    <option>Anemia</option>
-                                </select>
+                            {/* Diseases */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="diseases">
+                                    Diseases
+                                </h4>
+                                <div className="col-md-8">
+                                    <select className="form-control" onChange={handleDiseaseChange}>
+                                        <option value="">Select Disease</option>
+                                        <option>Cancer</option>
+                                        <option>Diabetes</option>
+                                        <option>Hypertension</option>
+                                        <option>Asthma</option>
+                                        <option>Malaria</option>
+                                        <option>Anemia</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Allergies */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="allergies">
-                                Allergies
-                            </h4>
-                            <div className="col-md-8">
-                                <select className="form-control" onChange={handleAllergyChange}>
-                                    <option value="">Select Allergy</option>
-                                    <option>Pollen</option>
-                                    <option>Pet Allergy</option>
-                                    <option>Mold Allergy</option>
-                                    <option>Milk Allergy</option>
-                                    <option>Soy Allergy</option>
-                                    <option>Latex Allergy</option>
-                                </select>
+                            {/* Allergies */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="allergies">
+                                    Allergies
+                                </h4>
+                                <div className="col-md-8">
+                                    <select className="form-control" onChange={handleAllergyChange}>
+                                        <option value="">Select Allergy</option>
+                                        <option>Pollen</option>
+                                        <option>Pet Allergy</option>
+                                        <option>Mold Allergy</option>
+                                        <option>Milk Allergy</option>
+                                        <option>Soy Allergy</option>
+                                        <option>Latex Allergy</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Selected Diseases & Allergies */}
-                        <div className="form-group">
-                            <div className="col-md-8 col-md-offset-2">
-                                {selectedDiseases.map((disease, index) => (
-                                    <div key={index} className="selected-item">
-                                        {disease}
-                                        <button type="button" className="delete-btn" onClick={() => handleDeleteDisease(disease)}>
-                                            &#10005;
-                                        </button>
-                                    </div>
-                                ))}
-                                {selectedAllergies.map((allergy, index) => (
-                                    <div key={index} className="selected-item">
-                                        {allergy}
-                                        <button type="button" className="delete-btn" onClick={() => handleDeleteAllergy(allergy)}>
-                                            &#10005;
-                                        </button>
-                                    </div>
-                                ))}
+                            {/* Selected Diseases & Allergies */}
+                            <div className="form-group">
+                                <div className="col-md-8 col-md-offset-2">
+                                    {selectedDiseases.map((disease, index) => (
+                                        <div key={index} className="selected-item">
+                                            {disease}
+                                            <button type="button" className="delete-btn" onClick={() => handleDeleteDisease(disease)}>
+                                                &#10005;
+                                            </button>
+                                        </div>
+                                    ))}
+                                    {selectedAllergies.map((allergy, index) => (
+                                        <div key={index} className="selected-item">
+                                            {allergy}
+                                            <button type="button" className="delete-btn" onClick={() => handleDeleteAllergy(allergy)}>
+                                                &#10005;
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Other Inputs */}
-                        {/* Age */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="age">
-                                Age
-                            </h4>
-                            <div className="col-md-3">
-                                <input
-                                    className="form-control"
-                                    id="age"
-                                    type="number"
-                                    placeholder="Age"
-                                    value={formData.age}
-                                    onChange={handleInputChange}
-                                />
+                            {/* Other Inputs */}
+                            {/* Age */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="age">
+                                    Age
+                                </h4>
+                                <div className="col-md-3">
+                                    <input
+                                        className="form-control"
+                                        id="age"
+                                        type="number"
+                                        placeholder="Age"
+                                        value={formData.age}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Gender */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="gender">
-                                Gender
-                            </h4>
-                            <div className="col-md-3">
-                                <select
-                                    className="form-control"
-                                    id="gender"
-                                    value={formData.gender}
-                                    onChange={handleInputChange}
-                                >
-                                    <option value="">Select Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
-                                </select>
+                            {/* Gender */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="gender">
+                                    Gender
+                                </h4>
+                                <div className="col-md-3">
+                                    <select
+                                        className="form-control"
+                                        id="gender"
+                                        value={formData.gender}
+                                        onChange={handleInputChange}
+                                    >
+                                        <option value="">Select Gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Contact Info */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="contactInfo">
-                                Contact Info
-                            </h4>
-                            <div className="col-md-6">
-                                <input
-                                    className="form-control"
-                                    id="contactInfo"
-                                    type="text"
-                                    placeholder="E-mail"
-                                    value={formData.contactInfo}
-                                    onChange={handleInputChange}
-                                />
-                                <input
-                                    className="form-control"
-                                    id="emergencyContact"
-                                    type="text"
-                                    placeholder="Emergency Contact"
-                                    value={formData.emergencyContact}
-                                    onChange={handleInputChange}
-                                />
+                            {/* Contact Info */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="contactInfo">
+                                    Contact Info
+                                </h4>
+                                <div className="col-md-6">
+                                    <input
+                                        className="form-control"
+                                        id="contactInfo"
+                                        type="text"
+                                        placeholder="E-mail"
+                                        value={formData.contactInfo}
+                                        onChange={handleInputChange}
+                                    />
+                                    <input
+                                        className="form-control"
+                                        id="emergencyContact"
+                                        type="text"
+                                        placeholder="Emergency Contact"
+                                        value={formData.emergencyContact}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Room, Bed, and Floor */}
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="roomNumber">
-                                Room Number
-                            </h4>
-                            <div className="col-md-3">
-                                <input
-                                    className="form-control"
-                                    id="roomNumber"
-                                    type="text"
-                                    placeholder="Room Number"
-                                    value={formData.roomNumber}
-                                    onChange={handleInputChange}
-                                />
+                            {/* Room, Bed, and Floor */}
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="roomNumber">
+                                    Room Number
+                                </h4>
+                                <div className="col-md-3">
+                                    <input
+                                        className="form-control"
+                                        id="roomNumber"
+                                        type="text"
+                                        placeholder="Room Number"
+                                        value={formData.roomNumber}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="bedNumber">
-                                Bed Number
-                            </h4>
-                            <div className="col-md-3">
-                                <input
-                                    className="form-control"
-                                    id="bedNumber"
-                                    type="text"
-                                    placeholder="Bed Number"
-                                    value={formData.bedNumber}
-                                    onChange={handleInputChange}
-                                />
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="bedNumber">
+                                    Bed Number
+                                </h4>
+                                <div className="col-md-3">
+                                    <input
+                                        className="form-control"
+                                        id="bedNumber"
+                                        type="text"
+                                        placeholder="Bed Number"
+                                        value={formData.bedNumber}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <div className="form-group">
-                            <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="floorNumber">
-                                Floor Number
-                            </h4>
-                            <div className="col-md-3">
-                                <input
-                                    className="form-control"
-                                    id="floorNumber"
-                                    type="text"
-                                    placeholder="Floor Number"
-                                    value={formData.floorNumber}
-                                    onChange={handleInputChange}
-                                />
+                            <div className="form-group">
+                                <h4 className="control-label col-md-2 col-md-offset-2" htmlFor="floorNumber">
+                                    Floor Number
+                                </h4>
+                                <div className="col-md-3">
+                                    <input
+                                        className="form-control"
+                                        id="floorNumber"
+                                        type="text"
+                                        placeholder="Floor Number"
+                                        value={formData.floorNumber}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Submit Button */}
-                        <div className="form-group">
-                            <div className="col-md-offset-4 col-md-3">
-                                <button className="btn-lg btn-primary" type="submit">
-                                    Request Reservation
-                                </button>
+                            {/* Submit Button */}
+                            <div className="form-group">
+                                <div className="col-md-offset-4 col-md-3">
+                                    <button className="btn-lg btn-primary" type="submit">
+                                        Request Reservation
+                                    </button>
+                                </div>
+                                <div className="col-md-3">
+                                    <button className="btn-lg btn-danger" type="button" style={{ float: 'right' }}>
+                                        Cancel
+                                    </button>
+                                </div>
                             </div>
-                            <div className="col-md-3">
-                                <button className="btn-lg btn-danger" type="button" style={{ float: 'right' }}>
-                                    Cancel
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

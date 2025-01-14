@@ -23,22 +23,6 @@ const ContactSection = () => {
                 <h2>Contact us to start your next project!</h2>
             </div>
 
-            <div className="address">
-                <i className="fas fa-map-marker-alt"></i>
-                <h3>8266 Gygax</h3>
-                <h3>Norfolk, VA</h3>
-            </div>
-
-            <div className="phone">
-                <i className="fas fa-phone-alt"></i>
-                <h3>757 287 1608</h3>
-            </div>
-
-            <div className="email">
-                <i className="fas fa-envelope"></i>
-                <h3>hello@adept.com</h3>
-            </div>
-
             <div className="contact-form">
                 <form className="contactform">
                     <input type="text" placeholder="Name" />

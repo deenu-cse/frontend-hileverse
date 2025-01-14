@@ -1,31 +1,113 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(to right, #007acc, #72c2ff);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-mainbg {
+  background-color: #5161ce;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  padding: 15px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  border: none;
+  background: none;
+}
+
+.navbar-toggler .fas {
+  font-size: 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 25px;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+  color: #5161ce;
+  background-color: #fff;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+
+.hori-selector {
+  display: inline-block;
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border-radius: 25px;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.hori-selector .left,
+.hori-selector .right {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.hori-selector .left {
+  left: -15px;
+  border-radius: 50% 0 0 50%;
+}
+
+.hori-selector .right {
+  right: -15px;
+  border-radius: 0 50% 50% 0;
+}
+
+@media (max-width: 991px) {
+  .nav-link {
+    padding: 12px 20px;
+    font-size: 14px;
   }
-  
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
+  .hori-selector {
+    border-radius: 20px;
   }
-  
-  .book-food-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-    background-color: white;
-    color: #007acc;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .book-food-btn:hover {
-    background-color: #e6f7ff;
-    transform: scale(1.05);
-  }
-  
+}
+
+.nav-item .nav-link.custom-btn {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ff6b6b;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.nav-item .nav-link.custom-btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
