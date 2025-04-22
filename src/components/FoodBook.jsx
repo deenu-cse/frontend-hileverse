@@ -91,6 +91,7 @@ const ReservationForm = () => {
                     bedNumber: "",
                     floorNumber: ""
                 });
+                window.location.href = '/'; 
                 setHasBooked(true);
             } else {
                 alert('Failed to submit the reservation.');

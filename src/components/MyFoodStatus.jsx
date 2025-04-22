@@ -3,9 +3,9 @@ import '../styles/MyFoodStatus.css';
 import axios from 'axios';
 
 export default function MyFoodStatus() {
-    const [foodStatusData, setFoodStatusData] = useState([]); // Data from the food status API
-    const [dietChartData, setDietChartData] = useState([]); // Data from the diet chart API
-    const [mergedData, setMergedData] = useState([]); // Combined data for the table
+    const [foodStatusData, setFoodStatusData] = useState([]);
+    const [dietChartData, setDietChartData] = useState([]);
+    const [mergedData, setMergedData] = useState([]);
 
     const patientId = localStorage.getItem('patientId');
 
@@ -20,7 +20,7 @@ export default function MyFoodStatus() {
         try {
             const response = await axios.get(`https://hilverse-backend.vercel.app/get-tasks/${id}`);
             console.log("Food Status Data:", response.data);
-            setFoodStatusData(Array.isArray(response.data) ? response.data : [response.data]); // Ensure data is an array
+            setFoodStatusData(Array.isArray(response.data) ? response.data : [response.data]);
         } catch (error) {
             console.error('Error fetching food status:', error);
         }
@@ -34,14 +34,16 @@ export default function MyFoodStatus() {
                 { mealTime: 'Evening Meal', ...response.data.data.eveningMeal },
                 { mealTime: 'Night Meal', ...response.data.data.nightMeal },
             ];
-            setDietChartData(dietChartArray); 
+            setDietChartData(dietChartArray);
         } catch (error) {
             console.error('Error fetching diet chart:', error);
+            setDietChartData([]);
         }
     };
 
     useEffect(() => {
-        if (foodStatusData.length && dietChartData.length) {
+        if (dietChartData.length) {
+            // If diet chart data exists, merge with food status data
             const combinedData = dietChartData.map((diet) => {
                 const statusData = foodStatusData.find(
                     (status) => status.mealType === diet.mealTime.split(' ')[0]
@@ -56,6 +58,13 @@ export default function MyFoodStatus() {
                 };
             });
             setMergedData(combinedData);
+        } else {
+            const defaultData = [
+                { mealTime: 'Morning Meal', food: 'N/A', preparationStatus: 'N/A', deliveryStatus: 'N/A', roomName: 'N/A', bedNumber: 'N/A' },
+                { mealTime: 'Evening Meal', food: 'N/A', preparationStatus: 'N/A', deliveryStatus: 'N/A', roomName: 'N/A', bedNumber: 'N/A' },
+                { mealTime: 'Night Meal', food: 'N/A', preparationStatus: 'N/A', deliveryStatus: 'N/A', roomName: 'N/A', bedNumber: 'N/A' },
+            ];
+            setMergedData(defaultData);
         }
     }, [foodStatusData, dietChartData]);
 
@@ -74,7 +83,7 @@ export default function MyFoodStatus() {
                     </tr>
                 </thead>
                 <tbody>
-                    {mergedData.length > 0 ? mergedData.map((item, index) => (
+                    {mergedData.map((item, index) => (
                         <tr key={index}>
                             <td>{item.mealTime}</td>
                             <td>{item.food}</td>
@@ -87,13 +96,7 @@ export default function MyFoodStatus() {
                                 {item.deliveryStatus}
                             </td>
                         </tr>
-                    )) : (
-                        <tr>
-                            <td colSpan="6" className="no-data">
-                                No Schedule for today.
-                            </td>
-                        </tr>
-                    )}
+                    ))}
                 </tbody>
             </table>
         </div>
